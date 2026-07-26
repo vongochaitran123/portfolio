@@ -1,518 +1,474 @@
-<!DOCTYPE html>
-<html lang="en">
+/*==================================================
+                GOOGLE FONT
+==================================================*/
 
-<head>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap');
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/*==================================================
+                ROOT VARIABLES
+==================================================*/
 
-    <title>Tran | Data Analyst Portfolio</title>
+:root{
 
-    <meta name="description"
-        content="Data Analyst Portfolio | Excel | SQL | Python | Power BI">
+    --primary:#2563EB;
+    --primary-dark:#1D4ED8;
+    --secondary:#06B6D4;
+    --accent:#14B8A6;
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    --bg:#F8FAFC;
+    --card:#FFFFFF;
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
-        rel="stylesheet">
+    --text:#0F172A;
+    --text-light:#64748B;
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    --border:#E2E8F0;
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    --shadow:0 10px 35px rgba(15,23,42,.08);
 
-</head>
+    --radius:18px;
 
-<body>
+    --transition:.35s ease;
 
-    <!-- ================= NAVBAR ================= -->
+}
 
-    <header>
+/*==================================================
+                    RESET
+==================================================*/
 
-        <nav class="navbar">
+*{
 
-            <div class="logo">
-                Data Analyst
-            </div>
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 
-            <ul>
+}
 
-                <li><a href="#about">About</a></li>
+html{
 
-                <li><a href="#skills">Skills</a></li>
+    scroll-behavior:smooth;
 
-                <li><a href="#projects">Projects</a></li>
+}
 
-                <li><a href="#experience">Experience</a></li>
+body{
 
-                <li><a href="#certificate">Certificate</a></li>
+    background:var(--bg);
 
-                <li><a href="#contact">Contact</a></li>
+    color:var(--text);
 
-            </ul>
+    font-family:'Inter',sans-serif;
 
-        </nav>
+    line-height:1.7;
 
-    </header>
+}
 
+img{
 
+    width:100%;
 
-    <!-- ================= HERO ================= -->
+    display:block;
 
-    <section class="hero">
+}
 
-        <div class="hero-content">
+a{
 
-            <p class="welcome">
-                Hello, I'm
-            </p>
+    text-decoration:none;
 
-            <h1>
+    color:inherit;
 
-                Tran
+}
 
-            </h1>
+ul{
 
-            <h2>
+    list-style:none;
 
-                Data Analyst
+}
 
-            </h2>
+section{
 
-            <p class="hero-text">
+    padding:90px 8%;
 
-                Transforming raw data into meaningful insights
-                through Excel, SQL, Python and Power BI.
+}
 
-            </p>
+.section-title{
 
-            <div class="hero-button">
+    font-family:'Poppins',sans-serif;
 
-                <a href="#projects" class="btn-primary">
+    font-size:38px;
 
-                    View Projects
+    text-align:center;
 
-                </a>
+    margin-bottom:50px;
 
-                <a href="assets/Resume.pdf" class="btn-secondary">
+}
 
-                    Download Resume
+/*==================================================
+                    NAVBAR
+==================================================*/
 
-                </a>
+header{
 
-            </div>
+    position:fixed;
 
-        </div>
+    width:100%;
 
-    </section>
+    top:0;
 
+    left:0;
 
+    z-index:999;
 
-    <!-- ================= KPI ================= -->
+    background:rgba(255,255,255,.75);
 
-    <section class="kpi">
+    backdrop-filter:blur(16px);
 
-        <div class="card">
+    border-bottom:1px solid rgba(255,255,255,.2);
 
-            <h3>04</h3>
+}
 
-            <p>Projects</p>
+.navbar{
 
-        </div>
+    max-width:1300px;
 
-        <div class="card">
+    margin:auto;
 
-            <h3>05</h3>
+    display:flex;
 
-            <p>Dashboards</p>
+    justify-content:space-between;
 
-        </div>
+    align-items:center;
 
-        <div class="card">
+    padding:22px 30px;
 
-            <h3>30+</h3>
+}
 
-            <p>SQL Challenges</p>
+.logo{
 
-        </div>
+    font-size:24px;
 
-        <div class="card">
+    font-family:'Poppins',sans-serif;
 
-            <h3>04</h3>
+    font-weight:700;
 
-            <p>Tools</p>
+    color:var(--primary);
 
-        </div>
+}
 
-    </section>
+.navbar ul{
 
+    display:flex;
 
+    gap:35px;
 
-    <!-- ================= ABOUT ================= -->
+}
 
-    <section id="about" class="section">
+.navbar a{
 
-        <h2 class="section-title">
+    color:var(--text);
 
-            About Me
+    font-weight:500;
 
-        </h2>
+    transition:var(--transition);
 
-        <p>
+    position:relative;
 
-            Data Analyst passionate about transforming data into actionable
-            business insights.
+}
 
-            Skilled in Excel, SQL, Python and Power BI with practical
-            experience in data cleaning, visualization and reporting.
+.navbar a::after{
 
-        </p>
+    content:"";
 
-    </section>
+    position:absolute;
 
+    left:0;
 
+    bottom:-6px;
 
-    <!-- ================= SKILLS ================= -->
+    width:0;
 
-    <section id="skills" class="section">
+    height:2px;
 
-        <h2 class="section-title">
+    background:var(--primary);
 
-            Technical Skills
+    transition:.3s;
 
-        </h2>
+}
 
-        <div class="skill-grid">
+.navbar a:hover{
 
-            <div class="skill-card">
+    color:var(--primary);
 
-                <i class="fa-solid fa-file-excel"></i>
+}
 
-                <h3>Excel</h3>
+.navbar a:hover::after{
 
-                <p>
+    width:100%;
 
-                    Pivot Table
+}
 
-                    <br>
+/*==================================================
+                    HERO
+==================================================*/
 
-                    Power Query
+.hero{
 
-                    <br>
+    min-height:100vh;
 
-                    Dashboard
+    display:flex;
 
-                </p>
+    justify-content:center;
 
-            </div>
+    align-items:center;
 
-            <div class="skill-card">
+    text-align:center;
 
-                <i class="fa-solid fa-database"></i>
+    position:relative;
 
-                <h3>SQL</h3>
+    overflow:hidden;
 
-                <p>
+    background:linear-gradient(
+        135deg,
+        #EFF6FF,
+        #F8FAFC
+    );
 
-                    JOIN
+}
 
-                    <br>
+/* Background Blur */
 
-                    CTE
+.hero::before{
 
-                    <br>
+    content:"";
 
-                    Window Function
+    position:absolute;
 
-                </p>
+    width:520px;
 
-            </div>
+    height:520px;
 
-            <div class="skill-card">
+    background:rgba(37,99,235,.15);
 
-                <i class="fa-brands fa-python"></i>
+    border-radius:50%;
 
-                <h3>Python</h3>
+    filter:blur(80px);
 
-                <p>
+    top:-180px;
 
-                    Pandas
+    left:-120px;
 
-                    <br>
+}
 
-                    NumPy
+.hero::after{
 
-                    <br>
+    content:"";
 
-                    Matplotlib
+    position:absolute;
 
-                </p>
+    width:450px;
 
-            </div>
+    height:450px;
 
-            <div class="skill-card">
+    background:rgba(20,184,166,.15);
 
-                <i class="fa-solid fa-chart-column"></i>
+    border-radius:50%;
 
-                <h3>Power BI</h3>
+    filter:blur(80px);
 
-                <p>
+    bottom:-180px;
 
-                    DAX
+    right:-120px;
 
-                    <br>
+}
 
-                    Power Query
+.hero-content{
 
-                    <br>
+    position:relative;
 
-                    Dashboard
+    z-index:2;
 
-                </p>
+    max-width:850px;
 
-            </div>
+}
 
-        </div>
+.welcome{
 
-    </section>
+    color:var(--primary);
 
+    font-size:18px;
 
+    font-weight:600;
 
-    <!-- ================= PROJECT ================= -->
+    letter-spacing:2px;
 
-    <section id="projects" class="section">
+    margin-bottom:15px;
 
-        <h2 class="section-title">
+}
 
-            Featured Projects
+.hero h1{
 
-        </h2>
+    font-family:'Poppins',sans-serif;
 
-        <div class="project-grid">
+    font-size:74px;
 
-            <div class="project-card">
+    line-height:1.1;
 
-                <div class="project-image">
+}
 
-                    Dashboard Preview
+.hero h2{
 
-                </div>
+    color:var(--primary);
 
-                <div class="project-content">
+    font-size:34px;
 
-                    <h3>
+    margin-top:15px;
 
-                        Customer Behavior Analysis
+    font-weight:700;
 
-                    </h3>
+}
 
-                    <p>
+.hero-text{
 
-                        Analyze customer purchasing behavior using
-                        Python, SQL and Power BI.
+    max-width:700px;
 
-                    </p>
+    margin:30px auto;
 
-                    <a href="pages/project1.html">
+    color:var(--text-light);
 
-                        View Project →
+    font-size:20px;
 
-                    </a>
+}
 
-                </div>
+/*==================================================
+                    BUTTON
+==================================================*/
 
-            </div>
+.hero-button{
 
-            <div class="project-card">
+    display:flex;
 
-                <div class="project-image">
+    justify-content:center;
 
-                    Dashboard Preview
+    gap:20px;
 
-                </div>
+    flex-wrap:wrap;
 
-                <div class="project-content">
+    margin-top:40px;
 
-                    <h3>
+}
 
-                        Sales Dashboard
+.btn-primary{
 
-                    </h3>
+    background:var(--primary);
 
-                    <p>
+    color:white;
 
-                        Interactive dashboard built with Power BI.
+    padding:16px 34px;
 
-                    </p>
+    border-radius:50px;
 
-                    <a href="#">
+    transition:var(--transition);
 
-                        View Project →
+    font-weight:600;
 
-                    </a>
+    box-shadow:0 12px 30px rgba(37,99,235,.25);
 
-                </div>
+}
 
-            </div>
+.btn-primary:hover{
 
-            <div class="project-card">
+    background:var(--primary-dark);
 
-                <div class="project-image">
+    transform:translateY(-4px);
 
-                    Dashboard Preview
+}
 
-                </div>
+.btn-secondary{
 
-                <div class="project-content">
+    border:2px solid var(--primary);
 
-                    <h3>
+    color:var(--primary);
 
-                        HR Analytics
+    padding:16px 34px;
 
-                    </h3>
+    border-radius:50px;
 
-                    <p>
+    transition:var(--transition);
 
-                        Analyze employee attrition and workforce trends.
+    font-weight:600;
 
-                    </p>
+}
 
-                    <a href="#">
+.btn-secondary:hover{
 
-                        View Project →
+    background:var(--primary);
 
-                    </a>
+    color:white;
 
-                </div>
+    transform:translateY(-4px);
 
-            </div>
+}
 
-        </div>
+/*==================================================
+                    KPI
+==================================================*/
 
-    </section>
+.kpi{
 
+    max-width:1200px;
 
+    margin:auto;
 
-    <!-- ================= EXPERIENCE ================= -->
+    display:grid;
 
-    <section id="experience" class="section">
+    grid-template-columns:repeat(4,1fr);
 
-        <h2 class="section-title">
+    gap:25px;
 
-            Experience
+    margin-top:-80px;
 
-        </h2>
+    position:relative;
 
-        <div class="timeline">
+    z-index:5;
 
-            <h3>
+}
 
-                QC Staff
+.card{
 
-            </h3>
+    background:var(--card);
 
-            <p>
+    border-radius:var(--radius);
 
-                Food Manufacturing
+    box-shadow:var(--shadow);
 
-            </p>
+    padding:40px;
 
-            <ul>
+    text-align:center;
 
-                <li>Production Data Analysis</li>
+    transition:var(--transition);
 
-                <li>Excel Reporting</li>
+}
 
-                <li>Quality Data Monitoring</li>
+.card:hover{
 
-                <li>Data Cleaning</li>
+    transform:translateY(-10px);
 
-            </ul>
+}
 
-        </div>
+.card h3{
 
-    </section>
+    font-size:42px;
 
+    color:var(--primary);
 
+    margin-bottom:10px;
 
-    <!-- ================= CERTIFICATE ================= -->
+    font-family:'Poppins',sans-serif;
 
-    <section id="certificate" class="section">
+}
 
-        <h2 class="section-title">
+.card p{
 
-            Certificates
+    color:var(--text-light);
 
-        </h2>
+    font-size:16px;
 
-        <div class="certificate-grid">
-
-            <div>Google Data Analytics</div>
-
-            <div>Power BI</div>
-
-            <div>SQL</div>
-
-            <div>Python</div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ================= CONTACT ================= -->
-
-    <section id="contact" class="section">
-
-        <h2 class="section-title">
-
-            Contact
-
-        </h2>
-
-        <p>
-
-            Email
-
-        </p>
-
-        <p>
-
-            GitHub
-
-        </p>
-
-        <p>
-
-            LinkedIn
-
-        </p>
-
-    </section>
-
-
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer>
-
-        <p>
-
-            © 2026 Tran | Data Analyst Portfolio
-
-        </p>
-
-    </footer>
-
-
-
-    <script src="js/script.js"></script>
-
-</body>
-
-</html>
+}
